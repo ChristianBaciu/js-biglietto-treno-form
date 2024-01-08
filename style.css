@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: #b91450;
+}
+
+.contenitore{
+    background-color: white;
+    width: 1000px;
+    margin: 0 auto;
+}
