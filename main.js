@@ -1,44 +1,49 @@
-const nomeGognomeHtml = document.getElementById( "nomeCognome" )
-const kmHtml = document.getElementById( "km" )
-const etaHtml = document.getElementById( "eta" )
-const bottoneGeneraHtml = document.getElementById( "bottoneGenera" )
-const numeroCarrozzaHtml = document.getElementById( "numeroCarrozza" )
-const numeroCpHtml = document.getElementById( "numeroCp" )
-const bigliettoNascostoHtml = document.getElementById( "bigliettoNascosto" )
-const nomeBigliettoHtml = document.getElementById( 'nomeBiglietto' )
-const costoBigliettoHtml = document.getElementById( 'costoBiglietto' )
+const nomeGognomeHtml = document.getElementById("nomeCognome")
+const kmHtml = document.getElementById("km")
+const etaHtml = document.getElementById("eta")
+const numeroCarrozzaHtml = document.getElementById("numeroCarrozza")
+const numeroCpHtml = document.getElementById("numeroCp")
+const bigliettoNascostoHtml = document.getElementById("bigliettoNascosto" )
+const nomeBigliettoHtml = document.getElementById("nomeBiglietto")
+const costoBigliettoHtml = document.getElementById("costoBiglietto")
+const risultatoBigliettoHtml = document.getElementById( 'risultatoBiglietto' )
 
-
-// per mettere in display-none la section biglietto
+// biglietto in none
 bigliettoNascostoHtml.style.display = "none"
 
-
-// al click del bottone attiva
+// bottone attivazione
+const bottoneGeneraHtml = document.getElementById( "bottoneGenera" )
 bottoneGeneraHtml.addEventListener( 'click', function() {
 
-    // per mettere in display-block la section biglietto
+    // biglietto in block
     bigliettoNascostoHtml.style.display = "block"
 
-    // mette un numero casuale 
-    let numeroCarrozza = RandomNumber ( 0,10 )
-    let numeroCp = RandomNumber ( 100,10000 )
+    // mette un numero casuale in HTML
+    let numeroCarrozza = RandomNumber ( 1,10 )
+    let numeroCp = RandomNumber ( 1000,10000 )
     numeroCarrozzaHtml.innerHTML = numeroCarrozza
     numeroCpHtml.innerHTML = numeroCp
 
-    // per mettere il nome cognome nel biglietto
+    // per mettere il nome cognome in HTML
     nomeBigliettoHtml.innerHTML = nomeGognomeHtml.value
+
     if( etaHtml.value === "minorenne" ){
-        costoBigliettoHtml.innerHTML = (kmHtml.value * 0.21) * 0.8
-  
-    }else if( etaHtml.value === "maggiorenne" ){  
-        costoBigliettoHtml.innerHTML = (kmHtml.value * 0.21) * 0.2
-  
-    }else if( etaHtml.value === "over65" ){  
-        costoBigliettoHtml.innerHTML = (kmHtml.value * 0.21) * 0.6
+        risultatoBigliettoHtml.innerHTML = "Biglietto scontato del 20%"
+        // costo del biglietto con lo sconto per minorenne
+        costoBigliettoHtml.innerHTML = ((kmHtml.value * 0.21)*0.8).toFixed(2) + "€"
+
+    }else if( etaHtml.value === "maggiorenne" ){
+        risultatoBigliettoHtml.innerHTML = "Biglietto standard"
+        // costo del biglietto standard
+        costoBigliettoHtml.innerHTML = (kmHtml.value * 0.21).toFixed(2) + "€"
+
+    }else if( etaHtml.value === "over"){
+        risultatoBigliettoHtml.innerHTML = "Biglietto scontato del 80%"
+        // costo del biglietto con lo sconto per over65
+        costoBigliettoHtml.innerHTML = ((kmHtml.value * 0.21)*0.2).toFixed(2) + "€"
     }
 })
 
-// genera un numero casuale 
 function RandomNumber( min,max ){
     return Math.floor( Math.random()*(max-min + 1) + min)
 }

@@ -10,17 +10,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    
     <section class="container text-center">
         <h2 class="text-center text-uppercase text-light p-2">
             calcola il prezzo del tuo biglietto
         </h2>
-    
 
         <div class=" bg-light rounded p-3">
             <div class="row">
@@ -36,9 +34,9 @@
 
                 <div class="col-4">
                     <label for="nameSurname" class="form-label text-danger">Fascia d'età</label>
-                    
+
                     <select id="eta" class="form-select text-center border border-danger" name="fasciaEtà" aria-label="">
-                        <option selected="minorenne">Minorenne</option>
+                        <option value="minorenne">Minorenne</option>
                         <option value="maggiorenne">Maggiorenne</option>
                         <option value="over">Over65</option>
                     </select>
@@ -53,15 +51,12 @@
                 Annulla
             </button>
         </div>
-
     </section>
 
-    <!-- section biglietto -->
     <section id="bigliettoNascosto" class="container text-center">
         <h2 class="text-center text-uppercase text-light p-2 ">
             il tuo biglietto
         </h2>
-    
 
         <div class="bg-light rounded pt-3 pb-5 ps-3">
             <div class="text-start text-uppercase fw-bold">
@@ -70,7 +65,7 @@
             <div class="row">
                 <div class="col-3">
                     <div class="text-start text-uppercase fw-bold">
-                        Nome passeggero
+                        nome passeggero
                     </div>
                     <div id="nomeBiglietto" class="text-start pt-2">0</div>
                 </div>
@@ -81,7 +76,7 @@
                             <div class="text-start fw-bold">
                                 Offerta
                             </div>
-                            <div class="text-start pt-3">Biglietto Standard</div>
+                            <div id="risultatoBiglietto" class="text-start pt-3">Biglietto Standard</div>
                         </div>
 
                         <div class="col-3">
@@ -109,7 +104,6 @@
                 </div>
             </div>
         </div>
-
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
